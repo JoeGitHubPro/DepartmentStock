@@ -20,15 +20,7 @@
 ## Documentation
 
 
-<div>
-  <a href="https://example.com" style=" display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;">Click me!</a>
-</div>
+
 
 
 <div>
@@ -47,7 +39,11 @@ Click button to get Decomntation sheet or vist home page after deploy
 [KB]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/PRODUCT.pdf)
 [K]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/DepartmentStockAPIDecomntation.xlsx)
 
+<div>
+  <a href="https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/CodeAnalysis.ods">Code Analysis</a>
+	  <a href="https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/Report%20Viewer.pdf">Report</a>
 
+</div>
 
 ## Prerequisites
 
