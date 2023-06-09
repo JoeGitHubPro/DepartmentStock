@@ -24,7 +24,7 @@
 Click button to get Decomntation sheet or vist home page after deploy
 	
 [<kbd> <br> Decomntation <br> </kbd>][KBD]
-[<kb> <br> Tech Decomntation <br> </kb>][KB]
+[<kbd> <br> Tech Decomntation <br> </kbd>][KB]
 
 
 </div>
@@ -42,7 +42,7 @@ Click button to get Decomntation sheet or vist home page after deploy
 ## Deploy DataBase
 
 ```sh
-Run SQL file at this location [https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeDBSQLQuery.sql] on database server
+Run SQL file at this location [] on database server
 ```
 
 ## Deploy
@@ -54,7 +54,7 @@ Go to  Web.config file , then change connectionStrings
 3- put server site username in "User Id"
 4- put server site password in "password"
 
-do those steps twice for "DefaultConnection" and "MasterDegreeEntities1"
+do those steps twice for "DefaultConnection" and "DepartmentStockEntities"
 ```
 
 
@@ -64,8 +64,9 @@ do those steps twice for "DefaultConnection" and "MasterDegreeEntities1"
 ```sh
 
  <connectionStrings>
-	  <add name="DefaultConnection" connectionString="Data Source=DESKTOP-T4OMHBE\SQLEXPRESS;Initial Catalog=MasterDegree;User Id=sa;Password=123456789" providerName="System.Data.SqlClient" />
-    <add name="MasterDegreeEntities1" connectionString="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-T4OMHBE\SQLEXPRESS;initial catalog=MasterDegree;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+	<add name="DefaultConnection" connectionString="Data Source=DESKTOP-T4OMHBE\SQLEXPRESS;initial catalog=DepartmentStock;Integrated Security=True" providerName="System.Data.SqlClient" />
+    <add name="DepartmentStockEntities" connectionString="metadata=res://*/Model.csdl|res://*/Model.ssdl|res://*/Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-T4OMHBE\SQLEXPRESS;initial catalog=DepartmentStock;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+
     </connectionStrings>
 ```
 
