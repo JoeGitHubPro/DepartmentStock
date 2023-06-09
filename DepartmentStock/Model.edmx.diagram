@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="96f140a5ba2c4702a7656a7a9b43fe3b" Name="Diagram1">
+        <EntityTypeShape EntityType="DepartmentStockModel.Device" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStockModel.DeviceCategory" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStockModel.DeviceSpecification" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStockModel.Location" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStockModel.Sponsorship" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DepartmentStockModel.FK_Sponsorship_Device" ManuallyRouted="false" />
+        <AssociationConnector Association="DepartmentStockModel.FK_Sponsorship_Location" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DepartmentStockModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DepartmentStockModel.AspNetRole" Width="1.5" PointX="0.75" PointY="9.5" />
+        <EntityTypeShape EntityType="DepartmentStockModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="8" />
+        <EntityTypeShape EntityType="DepartmentStockModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="10.75" />
+        <EntityTypeShape EntityType="DepartmentStockModel.AspNetUser" Width="1.5" PointX="3" PointY="8.25" />
+        <AssociationConnector Association="DepartmentStockModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="DepartmentStockModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="DepartmentStockModel.FK_Sponsorship_AspNetUsers" />
+        <AssociationConnector Association="DepartmentStockModel.AspNetUserRoles" />
+        <AssociationConnector Association="DepartmentStockModel.FK_Device_DeviceCategory" />
+        <AssociationConnector Association="DepartmentStockModel.FK_Device_Specification1" />
+        <EntityTypeShape EntityType="DepartmentStockModel.view_main" Width="1.5" PointX="8.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

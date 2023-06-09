@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DepartmentStockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="DeviceID" />
+    </Key>
+    <Property Name="DeviceID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeviceCategory" Type="Int32" />
+    <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceSpecification" Type="Int32" />
+    <NavigationProperty Name="Sponsorships" Relationship="Self.FK_Sponsorship_Device" FromRole="Device" ToRole="Sponsorship" />
+    <NavigationProperty Name="DeviceCategory1" Relationship="DepartmentStockModel.FK_Device_DeviceCategory" FromRole="Device" ToRole="DeviceCategory" />
+    <NavigationProperty Name="DeviceSpecification1" Relationship="DepartmentStockModel.FK_Device_Specification1" FromRole="Device" ToRole="DeviceSpecification" />
+  </EntityType>
+  <EntityType Name="DeviceCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Devices" Relationship="DepartmentStockModel.FK_Device_DeviceCategory" FromRole="DeviceCategory" ToRole="Device" />
+  </EntityType>
+  <EntityType Name="DeviceSpecification">
+    <Key>
+      <PropertyRef Name="SpecificationID" />
+    </Key>
+    <Property Name="SpecificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="INFO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Devices" Relationship="DepartmentStockModel.FK_Device_Specification1" FromRole="DeviceSpecification" ToRole="Device" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sponsorships" Relationship="Self.FK_Sponsorship_Location" FromRole="Location" ToRole="Sponsorship" />
+  </EntityType>
+  <EntityType Name="Sponsorship">
+    <Key>
+      <PropertyRef Name="SponsorshipID" />
+    </Key>
+    <Property Name="SponsorshipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Device" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Location" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Device1" Relationship="Self.FK_Sponsorship_Device" FromRole="Sponsorship" ToRole="Device" />
+    <NavigationProperty Name="Location1" Relationship="Self.FK_Sponsorship_Location" FromRole="Sponsorship" ToRole="Location" />
+    <NavigationProperty Name="AspNetUser" Relationship="DepartmentStockModel.FK_Sponsorship_AspNetUsers" FromRole="Sponsorship" ToRole="AspNetUser" />
+  </EntityType>
+  <Association Name="FK_Sponsorship_Device">
+    <End Role="Device" Type="Self.Device" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceID" />
+      </Principal>
+      <Dependent Role="Sponsorship">
+        <PropertyRef Name="Device" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sponsorship_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Sponsorship">
+        <PropertyRef Name="Location" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DepartmentStockEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Devices" EntityType="Self.Device" />
+    <EntitySet Name="DeviceCategories" EntityType="Self.DeviceCategory" />
+    <EntitySet Name="DeviceSpecifications" EntityType="Self.DeviceSpecification" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="Sponsorships" EntityType="Self.Sponsorship" />
+    <AssociationSet Name="FK_Sponsorship_Device" Association="Self.FK_Sponsorship_Device">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="Sponsorship" EntitySet="Sponsorships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sponsorship_Location" Association="Self.FK_Sponsorship_Location">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Sponsorship" EntitySet="Sponsorships" />
+    </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="DepartmentStockModel.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="DepartmentStockModel.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="DepartmentStockModel.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="DepartmentStockModel.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="DepartmentStockModel.AspNetUser" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="DepartmentStockModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="DepartmentStockModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sponsorship_AspNetUsers" Association="DepartmentStockModel.FK_Sponsorship_AspNetUsers">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="Sponsorship" EntitySet="Sponsorships" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="DepartmentStockModel.AspNetUserRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_DeviceCategory" Association="DepartmentStockModel.FK_Device_DeviceCategory">
+      <End Role="DeviceCategory" EntitySet="DeviceCategories" />
+      <End Role="Device" EntitySet="Devices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Specification1" Association="DepartmentStockModel.FK_Device_Specification1">
+      <End Role="DeviceSpecification" EntitySet="DeviceSpecifications" />
+      <End Role="Device" EntitySet="Devices" />
+    </AssociationSet>
+    <EntitySet Name="view_main" EntityType="DepartmentStockModel.view_main" />
+    <FunctionImport Name="ReportFunc" IsComposable="true" ReturnType="Collection(DepartmentStockModel.ReportFunc_Result)">
+      <Parameter Name="User" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="DepartmentStockModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="DepartmentStockModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="DepartmentStockModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="DepartmentStockModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="DepartmentStockModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+    <NavigationProperty Name="Sponsorships" Relationship="DepartmentStockModel.FK_Sponsorship_AspNetUsers" FromRole="AspNetUser" ToRole="Sponsorship" />
+    <NavigationProperty Name="AspNetRoles" Relationship="DepartmentStockModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Degree" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Type="DepartmentStockModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DepartmentStockModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="DepartmentStockModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DepartmentStockModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sponsorship_AspNetUsers">
+    <End Type="DepartmentStockModel.AspNetUser" Role="AspNetUser" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DepartmentStockModel.Sponsorship" Role="Sponsorship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sponsorship">
+        <PropertyRef Name="User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="DepartmentStockModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+    <End Type="DepartmentStockModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Device_DeviceCategory">
+    <End Type="DepartmentStockModel.DeviceCategory" Role="DeviceCategory" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DepartmentStockModel.Device" Role="Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="DeviceCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Specification1">
+    <End Type="DepartmentStockModel.DeviceSpecification" Role="DeviceSpecification" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DepartmentStockModel.Device" Role="Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceSpecification">
+        <PropertyRef Name="SpecificationID" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="DeviceSpecification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="view_main">
+    <Key>
+      <PropertyRef Name="SponsorshipID" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="DeviceID" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="SponsorshipID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LocationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="ReportFunc_Result">
+    <Property Type="Int32" Name="SponsorshipID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="Name" Nullable="true" />
+    <Property Type="String" Name="DeviceName" Nullable="true" />
+    <Property Type="String" Name="DeviceID" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="10" />
+    <Property Type="String" Name="Note" Nullable="true" />
+    <Property Type="String" Name="LocationName" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" />
+  </ComplexType>
+</Schema>
