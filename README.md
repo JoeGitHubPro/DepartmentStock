@@ -18,7 +18,18 @@
 
 ### 🏠 [Homepage](https://github.com/JoeGitHubPro/DepartmentStock)
 ## Documentation
-<div style="background-color: #f7f7f7; padding: 10px; border: 1px solid #ccc;">This is a div with inline CSS.</div>
+
+
+<div>
+  <a href="https://example.com" style=" display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;">Click me!</a>
+</div>
+
 
 <div>
 	
