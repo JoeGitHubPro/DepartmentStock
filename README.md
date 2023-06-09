@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/SQL%20Server-2019-yellow" />
   <img src="https://img.shields.io/badge/ASP.Net-4.7.2-%23790c91" />
-  <a href="https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/DepartmentStockAPIDecomntation.xlsx" target="_blank">
+  <a href="https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="https://github.com/kefranabg/readme-md-generator/graphs/commit-activity" target="_blank">
@@ -23,14 +23,17 @@
 	
 Click button to get Decomntation sheet or vist home page after deploy
 	
-[<kbd> <br> Decomntation <br> </kbd>][KBD]
-[<kbd> <br> Tech Decomntation <br> </kbd>][KB]
+[<kbd> <br> General Documentation <br> </kbd>][KBD]
+[<kbd> <br> Technical Documentation <br> </kbd>][KB]
+[<kbd> <br> End-Points Documentation <br> </kbd>][K]
 
 
 </div>
 
 [KBD]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/DepartmentStockAPIDecomntation.xlsx)
 [KB]: [Types/KBD.md](https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeAPIDecomntation.xlsx)
+[K]: [Types/KBD.md](https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeAPIDecomntation.xlsx)
+
 
 
 ## Prerequisites
