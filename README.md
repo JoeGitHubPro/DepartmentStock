@@ -41,6 +41,7 @@ Click button to get Decomntation sheet or vist home page after deploy
 
 <div>
   <a href="https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/CodeAnalysis.ods">Code Analysis</a>
+	<br>
 	  <a href="https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/Report%20Viewer.pdf">Report</a>
 
 </div>
