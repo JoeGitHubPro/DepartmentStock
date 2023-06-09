@@ -18,10 +18,12 @@
 
 ### 🏠 [Homepage](https://github.com/JoeGitHubPro/DepartmentStock)
 ## Documentation
+<div style="background-color: #f7f7f7; padding: 10px; border: 1px solid #ccc;">This is a div with inline CSS.</div>
 
 <div>
 	
 Click button to get Decomntation sheet or vist home page after deploy
+
 	
 [<kbd> <br> General Documentation <br> </kbd>][KBD]
 [<kbd> <br> Technical Documentation <br> </kbd>][KB]
