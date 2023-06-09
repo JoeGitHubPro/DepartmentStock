@@ -20,7 +20,7 @@ using static DepartmentStock.Models.UserModels;
 namespace DepartmentStock.Controllers.API
 {
     [RoutePrefix("api/Users")]
-    [Authorize(Roles = RoleNameModels.Admin)]
+    [Authorize]
     public class UsersController : ApiController
     {
         private DepartmentStockEntities db = new DepartmentStockEntities();
@@ -186,6 +186,7 @@ namespace DepartmentStock.Controllers.API
 
         [Route("EditAccountUsers")]
         [ResponseType(typeof(void))]
+        [Authorize(Roles = RoleNameModels.Admin)]
         public IHttpActionResult PutAspNetUserModel(UserModels model)
         {
             AspNetUser aspNetUser = db.AspNetUsers.Find(model.Id);
@@ -227,6 +228,7 @@ namespace DepartmentStock.Controllers.API
         // DELETE: api/Users/5
         [Route("DeleteAccountUsers")]
         [ResponseType(typeof(AspNetUser))]
+        [Authorize(Roles = RoleNameModels.Admin)]
         public IHttpActionResult DeleteAspNetUser(UserModels model)
         {
             AspNetUser aspNetUser = db.AspNetUsers.Find(model.Id);
