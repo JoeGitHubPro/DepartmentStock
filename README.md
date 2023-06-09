@@ -1,4 +1,4 @@
-# Welcome to CDMS 👋
+# Welcome to Department Stock System👋
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/SQL%20Server-2019-yellow" />
@@ -14,7 +14,7 @@
   </a>
 
 </p>
-> Custody Database Management System -  Department Stock
+> Department Stock System
 
 ### 🏠 [Homepage](https://github.com/JoeGitHubPro/DepartmentStock)
 ## Documentation
@@ -30,9 +30,9 @@ Click button to get Decomntation sheet or vist home page after deploy
 
 </div>
 
-[KBD]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/DepartmentStockAPIDecomntation.xlsx)
-[KB]: [Types/KBD.md](https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeAPIDecomntation.xlsx)
-[K]: [Types/KBD.md](https://github.com/JoeGitHubPro/MasterDegree/blob/master/MasterDegreeAPIDecomntation.xlsx)
+[KBD]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/Introduction.pptx)
+[KB]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/PRODUCT.pdf)
+[K]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/DepartmentStockAPIDecomntation.xlsx)
 
 
 
