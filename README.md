@@ -15,10 +15,9 @@
 
 </p>
 > Department Stock System
-> <a href="https://github.com/Flepooo/CDMS">Client Side</a>
 
 
-### 🏠 [Homepage](https://github.com/JoeGitHubPro/DepartmentStock)
+### 🏠 [Homepage - Client Side](https://github.com/Flepooo/CDMS)
 ## Documentation
 
 
