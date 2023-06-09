@@ -17,7 +17,7 @@
 > Department Stock System
 
 
-### 🏠 [Homepage - Client Side](https://github.com/Flepooo/CDMS)
+### 🏠 [Homepage](https://github.com/Flepooo/CDMS)
 ## Documentation
 
 
