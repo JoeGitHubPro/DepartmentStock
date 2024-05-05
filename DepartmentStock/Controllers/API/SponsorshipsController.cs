@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DepartmentStock.Models;
+using System;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using DepartmentStock;
-using DepartmentStock.Models;
-using DepartmentStock.SystemsApproaches.MailSystem;
 
 namespace DepartmentStock.Controllers.API
 {
@@ -53,7 +49,7 @@ namespace DepartmentStock.Controllers.API
         [ResponseType(typeof(Sponsorship))]
         public IHttpActionResult GetSponsorship(int SponsorshipID)
         {
-            var sponsorship = db.view_main.Where(a=>a.SponsorshipID == SponsorshipID).FirstOrDefault();
+            var sponsorship = db.view_main.Where(a => a.SponsorshipID == SponsorshipID).FirstOrDefault();
             if (sponsorship == null)
             {
                 return NotFound();
@@ -106,18 +102,20 @@ namespace DepartmentStock.Controllers.API
             {
                 return BadRequest(ModelState);
             }
+            string userId = db.AspNetUsers.Where(a => a.UserName == model.User).Select(a => a.Id).SingleOrDefault();
+            model.User = userId;
             db.Sponsorships.Add(model);
             db.SaveChanges();
             try
             {
 
-                SponsorshipNotification.AddSponsorshipNotification(model.SponsorshipID);
+                // SponsorshipNotification.AddSponsorshipNotification(model.SponsorshipID);
 
             }
             catch (Exception e)
             {
                 return Ok("Obj added successfully, but without notification erorr message - " + e.Message);
-             
+
             }
 
             return StatusCode(HttpStatusCode.Created);
