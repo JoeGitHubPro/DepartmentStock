@@ -16,15 +16,15 @@
 
 </p>
 
-### 🏠 [Homepage-live](https://cdms.vercel.app)
 
+<a href="https://cdms.vercel.app" target="_blank">
 <p align="center"><img src="Doc&Info/CDMS.png" alt="project-image"></p>
-
+</a>
 
 ## Documentation
 
 <a href="Doc&Info/CDMS-Final.pdf" target="_blank">
-<p align="center"><img src="Doc&Info/Doc.png" alt="project-image" width="100%" height="300"></p>
+<p align="center"><img src="Doc&Info/Doc.png" alt="project-image"></p>
 </a>
 
 
