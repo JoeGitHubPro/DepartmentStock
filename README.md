@@ -1,4 +1,5 @@
 # Welcome to Department Stock System👋
+
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/SQL%20Server-2019-yellow" />
@@ -20,8 +21,12 @@
 <p align="center"><img src="Doc&Info/CDMS.png" alt="project-image"></p>
 
 
-
 ## Documentation
+
+<a href="Doc&Info/CDMS-Final.pdf" target="_blank">
+<p align="center"><img src="Doc&Info/Doc.png" alt="project-image" width="100%" height="300"></p>
+</a>
+
 
 
 
@@ -39,7 +44,7 @@ Click button to get Decomntation sheet or vist home page after deploy
 
 </div>
 
-[KBD]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/Introduction.pptx)
+[KBD]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/CDMS-Final.pdf)
 [KB]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/PRODUCT.pdf)
 [K]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/DepartmentStockAPIDecomntation.xlsx)
 
