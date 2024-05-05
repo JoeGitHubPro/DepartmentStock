@@ -14,14 +14,20 @@
   </a>
 
 </p>
-> Department Stock System
 
-### 🏠 [Homepage](https://github.com/JoeGitHubPro/DepartmentStock)
+
+
+### 🏠 [Homepage](https://github.com/Flepooo/CDMS)
 ## Documentation
+
+
+
+
 
 <div>
 	
 Click button to get Decomntation sheet or vist home page after deploy
+
 	
 [<kbd> <br> General Documentation <br> </kbd>][KBD]
 [<kbd> <br> Technical Documentation <br> </kbd>][KB]
@@ -35,6 +41,12 @@ Click button to get Decomntation sheet or vist home page after deploy
 [K]: [Types/KBD.md](https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/DepartmentStockAPIDecomntation.xlsx)
 
 
+## Code Analysis & Performance
+  <a href="https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/CodeAnalysis.ods">Code Analysis</a>
+	<br>
+	  <a href="https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/Report%20Viewer.pdf">Report</a>
+
+
 
 ## Prerequisites
 
@@ -45,7 +57,7 @@ Click button to get Decomntation sheet or vist home page after deploy
 ## Deploy DataBase
 
 ```sh
-Run SQL file at this location [] on database server
+Run SQL file at this location [https://github.com/JoeGitHubPro/DepartmentStock/blob/main/Doc%26Info/DepartmentStockSQLScript.sql] on database server
 ```
 
 ## Deploy
@@ -93,5 +105,5 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2023 [Youssef Mohamed Ali Mohamed](https://github.com/JoeGitHubPro).<br />
-This project is [ASP.Net](https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE) licensed.
+This project is Proprietary licensed.
 
