@@ -14,7 +14,7 @@
   </a>
 
 </p>
-> Department Stock System
+
 
 
 ### 🏠 [Homepage](https://github.com/Flepooo/CDMS)
